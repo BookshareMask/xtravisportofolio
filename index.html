@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Méta-données essentielles -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Nom | Portfolio Photo & Vidéo</title>
+    
+    <!-- Description pour les moteurs de recherche -->
+    <meta name="description" content="Portfolio professionnel de [Votre Nom]. Découvrez mes projets en photographie et vidéographie.">
+
+    <!-- Google Fonts : Police moderne et lisible (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Feuille de style CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icônes (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- =========== HEADER / NAVIGATION =========== -->
+    <!-- Le header contient le logo et le menu de navigation. -->
+    <header class="header">
+        <nav class="navbar">
+            <!-- Remplacez "Mon Logo" par votre nom ou votre logo -->
+            <a href="#home" class="nav-logo">Mon Logo</a>
+            
+            <!-- Liste des liens de navigation -->
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">À propos</a></li>
+                <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Menu "burger" pour les versions mobiles -->
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- =========== SECTION ACCUEIL (HOME) =========== -->
+        <!-- C'est la première chose que les visiteurs voient. -->
+        <section id="home" class="home-section">
+            <!-- Remplacez "images/banniere.jpg" par le chemin de votre image ou vidéo de fond -->
+            <div class="video-background">
+                <!-- Si vous utilisez une vidéo, décommentez la balise <video> et commentez la balise <img> -->
+                <!-- 
+                <video autoplay muted loop id="background-video">
+                    <source src="images/votre-video.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas les vidéos HTML5.
+                </video>
+                -->
+                <img src="https://via.placeholder.com/1920x1080/1a1a2e/ffffff?text=Image+de+Bannière" alt="Image de bannière principale" class="banner-image">
+            </div>
+            <div class="home-content">
+                <!-- Modifiez votre nom et votre slogan -->
+                <h1 class="home-title">Mon Nom</h1>
+                <p class="home-subtitle">Photographe & Vidéaste Passionné</p>
+                <div class="home-buttons">
+                    <a href="#portfolio" class="btn btn-primary">Voir mon travail</a>
+                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========== SECTION À PROPOS (ABOUT) =========== -->
+        <!-- Présentez-vous ici. -->
+        <section id="about" class="about-section content-card">
+            <h2 class="section-title">À Propos de Moi</h2>
+            <div class="about-content">
+                <!-- Remplacez "images/portrait.jpg" par la photo de vous -->
+                <img src="https://via.placeholder.com/300" alt="Portrait de [Mon Nom]" class="about-portrait">
+                <div class="about-text">
+                    <h3>Ma Biographie</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Voluptatem laudantium et consectetur.
+                        Ratione necessitatibus atque sint, temporibus corporis? Deleniti necessitatibus minus tenetur facilis quis.
+                    </p>
+                    <h3>Mon Approche Artistique</h3>
+                    <p>
+                        Ma philosophie est de capturer l'essence de chaque moment avec authenticité et créativité. 
+                        J'aime jouer avec la lumière naturelle pour créer des images intemporelles et émouvantes.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========== SECTION PORTFOLIO =========== -->
+        <!-- Montrez vos meilleures réalisations. -->
+        <section id="portfolio" class="portfolio-section">
+            <h2 class="section-title">Mon Portfolio</h2>
+            
+            <!-- Filtres pour les catégories (fonctionnalité ajoutée dans le JS) -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="*">Tout</button>
+                <button class="filter-btn" data-filter=".portrait">Portrait</button>
+                <button class="filter-btn" data-filter=".video">Vidéo</button>
+                <button class="filter-btn" data-filter=".evenement">Événement</button>
+            </div>
+
+            <!-- Galerie de projets -->
+            <div class="portfolio-gallery">
+                <!-- Projet 1 (Portrait) -->
+                <div class="portfolio-item portrait">
+                    <img src="https://via.placeholder.com/400x300/8A2BE2/ffffff?text=Projet+Portrait+1" alt="Description du projet 1">
+                    <div class="portfolio-overlay">
+                        <h3>Titre du Projet 1</h3>
+                        <p>Courte description du projet.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 2 (Vidéo) -->
+                <div class="portfolio-item video">
+                    <!-- Pour une vidéo, vous pouvez utiliser une image de couverture et un lien vers la vidéo -->
+                     <img src="https://via.placeholder.com/400x300/4682B4/ffffff?text=Projet+Vidéo+1" alt="Description du projet 2">
+                     <div class="portfolio-overlay">
+                        <i class="fas fa-play video-icon"></i>
+                        <h3>Titre de la Vidéo 1</h3>
+                        <p>Cliquez pour voir la vidéo.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 3 (Événement) -->
+                <div class="portfolio-item evenement">
+                    <img src="https://via.placeholder.com/400x300/3CB371/ffffff?text=Projet+Événement+1" alt="Description du projet 3">
+                    <div class="portfolio-overlay">
+                        <h3>Mariage de A & B</h3>
+                        <p>Reportage photo d'un mariage.</p>
+                    </div>
+                </div>
+                
+                <!-- Ajoutez autant de projets que vous le souhaitez en copiant un bloc "portfolio-item" -->
+            </div>
+        </section>
+
+
+        <!-- =========== SECTION SERVICES =========== -->
+        <!-- Décrivez ce que vous proposez. -->
+        <section id="services" class="services-section content-card">
+            <h2 class="section-title">Mes Services</h2>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-item">
+                    <i class="fas fa-camera-retro service-icon"></i>
+                    <h3>Séance Photo</h3>
+                    <p>Portraits, famille, couple. En studio ou en extérieur.</p>
+                    <span class="service-price">À partir de 150€</span>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-item">
+                    <i class="fas fa-video service-icon"></i>
+                    <h3>Production Vidéo</h3>
+                    <p>Clips, vidéos promotionnelles, interviews. Montage inclus.</p>
+                    <span class="service-price">Sur devis</span>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-item">
+                    <i class="fas fa-photo-film service-icon"></i>
+                    <h3>Reportage Événementiel</h3>
+                    <p>Mariages, concerts, conférences. Capturer l'ambiance de vos événements.</p>
+                    <span class="service-price">Sur devis</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========== SECTION CONTACT =========== -->
+        <!-- Permettez aux visiteurs de vous contacter. -->
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Contactez-moi</h2>
+            <div class="contact-container content-card">
+                <div class="contact-info">
+                    <h3>Informations</h3>
+                    <p><i class="fas fa-envelope"></i> email@exemple.com</p>
+                    <p><i class="fas fa-phone"></i> +33 6 12 34 56 78</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+                    <div class="social-links-contact">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Formulaire de contact -->
+                <form action="#" class="contact-form">
+                    <h3>Envoyez-moi un message</h3>
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Votre Nom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Votre Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Votre Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========== FOOTER =========== -->
+    <!-- Le pied de page contient les liens, les crédits et les mentions légales. -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-socials">
+                <!-- Mettez les liens vers vos vrais profils -->
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p class="footer-text">
+                © <span id="year"></span> Mon Nom. Tous droits réservés.
+            </p>
+            <p class="footer-legal">
+                <!-- Vous pouvez ajouter une page de mentions légales si nécessaire -->
+                <a href="#">Mentions Légales</a>
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- Fichier JavaScript (à la fin pour un chargement plus rapide) -->
+    <script src="script.js"></script>
+
+</body>
+</html>

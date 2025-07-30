@@ -4,17 +4,18 @@
     <!-- Méta-données essentielles -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Nom | Portfolio Photo & Vidéo</title>
+    <!-- MODIFIÉ : Titre adapté pour le double profil -->
+    <title>Mon Nom | Graphiste & Motion Designer</title>
     
-    <!-- Description pour les moteurs de recherche -->
-    <meta name="description" content="Portfolio professionnel de [Votre Nom]. Découvrez mes projets en photographie et vidéographie.">
+    <!-- MODIFIÉ : Description pour les moteurs de recherche -->
+    <meta name="description" content="Portfolio de [Votre Nom]. Découvrez mes projets en design graphique, motion design, et UI/UX.">
 
     <!-- Google Fonts : Police moderne et lisible (Poppins) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Feuille de style CSS -->
+    <!-- Feuille de style CSS (inchangée) -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Icônes (Font Awesome) -->
@@ -22,14 +23,10 @@
 </head>
 <body>
 
-    <!-- =========== HEADER / NAVIGATION =========== -->
-    <!-- Le header contient le logo et le menu de navigation. -->
+    <!-- =========== HEADER / NAVIGATION (inchangé) =========== -->
     <header class="header">
         <nav class="navbar">
-            <!-- Remplacez "Mon Logo" par votre nom ou votre logo -->
-            <a href="#home" class="nav-logo">Mon Logo</a>
-            
-            <!-- Liste des liens de navigation -->
+            <a href="#home" class="nav-logo">Mon Nom</a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#home" class="nav-link">Accueil</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">À propos</a></li>
@@ -37,8 +34,6 @@
                 <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-
-            <!-- Menu "burger" pour les versions mobiles -->
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -50,135 +45,115 @@
     <main>
 
         <!-- =========== SECTION ACCUEIL (HOME) =========== -->
-        <!-- C'est la première chose que les visiteurs voient. -->
         <section id="home" class="home-section">
-            <!-- Remplacez "images/banniere.jpg" par le chemin de votre image ou vidéo de fond -->
             <div class="video-background">
-                <!-- Si vous utilisez une vidéo, décommentez la balise <video> et commentez la balise <img> -->
-                <!-- 
-                <video autoplay muted loop id="background-video">
-                    <source src="images/votre-video.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas les vidéos HTML5.
-                </video>
-                -->
-                <img src="https://via.placeholder.com/1920x1080/1a1a2e/ffffff?text=Image+de+Bannière" alt="Image de bannière principale" class="banner-image">
+                 <!-- Astuce : utilisez une boucle vidéo de vos créations en fond ! -->
+                <img src="https://via.placeholder.com/1920x1080/1a1a2e/ffffff?text=Votre+Création+Animée" alt="Bannière principale" class="banner-image">
             </div>
             <div class="home-content">
-                <!-- Modifiez votre nom et votre slogan -->
+                <!-- MODIFIÉ : Slogan pour le double profil -->
                 <h1 class="home-title">Mon Nom</h1>
-                <p class="home-subtitle">Photographe & Vidéaste Passionné</p>
+                <p class="home-subtitle">Graphiste & Motion Designer</p>
                 <div class="home-buttons">
-                    <a href="#portfolio" class="btn btn-primary">Voir mon travail</a>
+                    <a href="#portfolio" class="btn btn-primary">Voir mes créations</a>
                     <a href="#contact" class="btn btn-secondary">Me contacter</a>
                 </div>
             </div>
         </section>
 
-
         <!-- =========== SECTION À PROPOS (ABOUT) =========== -->
-        <!-- Présentez-vous ici. -->
         <section id="about" class="about-section content-card">
             <h2 class="section-title">À Propos de Moi</h2>
             <div class="about-content">
-                <!-- Remplacez "images/portrait.jpg" par la photo de vous -->
                 <img src="https://via.placeholder.com/300" alt="Portrait de [Mon Nom]" class="about-portrait">
                 <div class="about-text">
-                    <h3>Ma Biographie</h3>
+                    <h3>Qui suis-je ?</h3>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Voluptatem laudantium et consectetur.
                         Ratione necessitatibus atque sint, temporibus corporis? Deleniti necessitatibus minus tenetur facilis quis.
                     </p>
-                    <h3>Mon Approche Artistique</h3>
+                    <!-- MODIFIÉ : Approche intégrant le mouvement -->
+                    <h3>Mon Approche Créative</h3>
                     <p>
-                        Ma philosophie est de capturer l'essence de chaque moment avec authenticité et créativité. 
-                        J'aime jouer avec la lumière naturelle pour créer des images intemporelles et émouvantes.
+                        Je conçois des identités visuelles percutantes et des expériences digitales fluides. Ma passion est de donner vie aux marques en alliant la force du design graphique à la magie du mouvement.
                     </p>
                 </div>
             </div>
         </section>
 
-
         <!-- =========== SECTION PORTFOLIO =========== -->
-        <!-- Montrez vos meilleures réalisations. -->
         <section id="portfolio" class="portfolio-section">
             <h2 class="section-title">Mon Portfolio</h2>
             
-            <!-- Filtres pour les catégories (fonctionnalité ajoutée dans le JS) -->
+            <!-- MODIFIÉ : Filtres incluant le Motion Design -->
             <div class="portfolio-filters">
                 <button class="filter-btn active" data-filter="*">Tout</button>
-                <button class="filter-btn" data-filter=".portrait">Portrait</button>
-                <button class="filter-btn" data-filter=".video">Vidéo</button>
-                <button class="filter-btn" data-filter=".evenement">Événement</button>
+                <button class="filter-btn" data-filter=".branding">Branding</button>
+                <button class="filter-btn" data-filter=".motion">Motion Design</button>
+                <button class="filter-btn" data-filter=".ui-ux">UI/UX</button>
             </div>
 
-            <!-- Galerie de projets -->
             <div class="portfolio-gallery">
-                <!-- Projet 1 (Portrait) -->
-                <div class="portfolio-item portrait">
-                    <img src="https://via.placeholder.com/400x300/8A2BE2/ffffff?text=Projet+Portrait+1" alt="Description du projet 1">
+                <!-- Projet 1 (Branding) -->
+                <div class="portfolio-item branding">
+                    <img src="https://via.placeholder.com/400x300/8A2BE2/ffffff?text=Projet+Branding" alt="Projet d'identité visuelle">
                     <div class="portfolio-overlay">
-                        <h3>Titre du Projet 1</h3>
-                        <p>Courte description du projet.</p>
+                        <h3>Identité Visuelle pour Marque X</h3>
+                        <p>Création de logo et charte graphique.</p>
                     </div>
                 </div>
 
-                <!-- Projet 2 (Vidéo) -->
-                <div class="portfolio-item video">
-                    <!-- Pour une vidéo, vous pouvez utiliser une image de couverture et un lien vers la vidéo -->
-                     <img src="https://via.placeholder.com/400x300/4682B4/ffffff?text=Projet+Vidéo+1" alt="Description du projet 2">
+                <!-- NOUVEAU : Projet 2 (Motion Design) -->
+                <div class="portfolio-item motion">
+                     <img src="https://via.placeholder.com/400x300/FF6347/ffffff?text=Projet+Motion" alt="Projet de motion design">
                      <div class="portfolio-overlay">
                         <i class="fas fa-play video-icon"></i>
-                        <h3>Titre de la Vidéo 1</h3>
-                        <p>Cliquez pour voir la vidéo.</p>
+                        <h3>Animation de Logo</h3>
+                        <p>Vidéo d'introduction pour une marque.</p>
                     </div>
                 </div>
 
-                <!-- Projet 3 (Événement) -->
-                <div class="portfolio-item evenement">
-                    <img src="https://via.placeholder.com/400x300/3CB371/ffffff?text=Projet+Événement+1" alt="Description du projet 3">
+                <!-- Projet 3 (UI/UX) -->
+                <div class="portfolio-item ui-ux">
+                    <img src="https://via.placeholder.com/400x300/4682B4/ffffff?text=Projet+UI/UX" alt="Projet de design d'application">
                     <div class="portfolio-overlay">
-                        <h3>Mariage de A & B</h3>
-                        <p>Reportage photo d'un mariage.</p>
+                        <h3>Maquette d'Application Mobile</h3>
+                        <p>Design d'interface pour une app de productivité.</p>
                     </div>
                 </div>
-                
-                <!-- Ajoutez autant de projets que vous le souhaitez en copiant un bloc "portfolio-item" -->
             </div>
         </section>
 
-
         <!-- =========== SECTION SERVICES =========== -->
-        <!-- Décrivez ce que vous proposez. -->
         <section id="services" class="services-section content-card">
             <h2 class="section-title">Mes Services</h2>
+            <!-- MODIFIÉ : Grille des services incluant le Motion Design -->
             <div class="services-grid">
                 <!-- Service 1 -->
                 <div class="service-item">
-                    <i class="fas fa-camera-retro service-icon"></i>
-                    <h3>Séance Photo</h3>
-                    <p>Portraits, famille, couple. En studio ou en extérieur.</p>
-                    <span class="service-price">À partir de 150€</span>
+                    <i class="fas fa-palette service-icon"></i>
+                    <h3>Identité Visuelle (Branding)</h3>
+                    <p>Création de logo, charte graphique complète, et supports de communication visuelle.</p>
+                    <span class="service-price">Sur devis</span>
                 </div>
-                <!-- Service 2 -->
+                <!-- NOUVEAU : Service 2 -->
                 <div class="service-item">
-                    <i class="fas fa-video service-icon"></i>
-                    <h3>Production Vidéo</h3>
-                    <p>Clips, vidéos promotionnelles, interviews. Montage inclus.</p>
+                    <i class="fas fa-film service-icon"></i>
+                    <h3>Motion Design</h3>
+                    <p>Animation de logo, vidéos explicatives, habillage vidéo et publicité pour les réseaux sociaux.</p>
                     <span class="service-price">Sur devis</span>
                 </div>
                 <!-- Service 3 -->
                 <div class="service-item">
-                    <i class="fas fa-photo-film service-icon"></i>
-                    <h3>Reportage Événementiel</h3>
-                    <p>Mariages, concerts, conférences. Capturer l'ambiance de vos événements.</p>
+                    <i class="fas fa-desktop service-icon"></i>
+                    <h3>Design d'Interface (UI/UX)</h3>
+                    <p>Conception de maquettes pour sites web et applications, création de prototypes interactifs.</p>
                     <span class="service-price">Sur devis</span>
                 </div>
             </div>
         </section>
 
-
         <!-- =========== SECTION CONTACT =========== -->
-        <!-- Permettez aux visiteurs de vous contacter. -->
         <section id="contact" class="contact-section">
             <h2 class="section-title">Contactez-moi</h2>
             <div class="contact-container content-card">
@@ -187,25 +162,19 @@
                     <p><i class="fas fa-envelope"></i> email@exemple.com</p>
                     <p><i class="fas fa-phone"></i> +33 6 12 34 56 78</p>
                     <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+                    <!-- MODIFIÉ : Suggestions de réseaux sociaux incluant Vimeo -->
                     <div class="social-links-contact">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                        <a href="#" aria-label="Vimeo"><i class="fab fa-vimeo-v"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 
-                <!-- Formulaire de contact -->
                 <form action="#" class="contact-form">
                     <h3>Envoyez-moi un message</h3>
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Votre Nom" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Votre Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Votre Message" required></textarea>
-                    </div>
+                    <div class="form-group"><input type="text" name="name" placeholder="Votre Nom" required></div>
+                    <div class="form-group"><input type="email" name="email" placeholder="Votre Email" required></div>
+                    <div class="form-group"><textarea name="message" placeholder="Votre Message" required></textarea></div>
                     <button type="submit" class="btn btn-primary">Envoyer</button>
                 </form>
             </div>
@@ -214,27 +183,25 @@
     </main>
 
     <!-- =========== FOOTER =========== -->
-    <!-- Le pied de page contient les liens, les crédits et les mentions légales. -->
     <footer class="footer">
         <div class="footer-content">
+            <!-- MODIFIÉ : Pensez à mettre vos liens Behance, Vimeo, etc. -->
             <div class="footer-socials">
-                <!-- Mettez les liens vers vos vrais profils -->
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                <a href="#" aria-label="Vimeo"><i class="fab fa-vimeo-v"></i></a>
+                <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
                 <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <p class="footer-text">
                 © <span id="year"></span> Mon Nom. Tous droits réservés.
             </p>
             <p class="footer-legal">
-                <!-- Vous pouvez ajouter une page de mentions légales si nécessaire -->
                 <a href="#">Mentions Légales</a>
             </p>
         </div>
     </footer>
 
-
-    <!-- Fichier JavaScript (à la fin pour un chargement plus rapide) -->
+    <!-- Fichier JavaScript (inchangé) -->
     <script src="script.js"></script>
 
 </body>

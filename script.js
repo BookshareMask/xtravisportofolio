@@ -5,12 +5,12 @@
    3. Filtre du Portfolio
    4. Liens de navigation actifs au défilement
    5. Logique du formulaire de contact avec EmailJS
-   6. NOUVEAU : Gestion de la modale vidéo
+   6. Gestion de la modale vidéo (MODIFIÉE POUR VIMEO)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ... (Tout le code des sections 1 à 4 reste identique) ...
+    // ... (Tout le code des sections 1 à 5 reste identique) ...
     /* =================================================== */
     /* 1. MENU HAMBURGER MOBILE (inchangé)                 */
     /* =================================================== */
@@ -101,46 +101,39 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /* =================================================== */
-    /* 6. NOUVEAU : GESTION DE LA MODALE VIDÉO              */
+    /* 6. MODIFIÉ : GESTION DE LA MODALE POUR VIMEO        */
     /* =================================================== */
     
-    // On sélectionne les éléments de la modale
     const modal = document.querySelector('.modal');
     const modalOverlay = document.querySelector('.modal-overlay');
     const modalContent = document.querySelector('.modal-content');
     const closeModalBtn = document.querySelector('.close-modal');
     
-    // On sélectionne TOUS les projets qui sont des vidéos
     const videoTriggers = document.querySelectorAll('.portfolio-item.motion, .portfolio-item.video');
 
-    // Fonction pour ouvrir la modale
-    function openModal(videoSrc) {
-        // Crée une balise vidéo et l'ajoute au contenu de la modale
-        modalContent.innerHTML = `<video src="${videoSrc}" controls autoplay></video>`;
+    function openModal(embedSrc) {
+        // MODIFIÉ : On crée un iframe pour Vimeo au lieu d'une balise video.
+        // Les attributs 'allow' sont importants pour le plein écran et l'autoplay.
+        modalContent.innerHTML = `<iframe src="${embedSrc}&autoplay=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
         modal.classList.add('active');
         modalOverlay.classList.add('active');
     }
 
-    // Fonction pour fermer la modale
     function closeModal() {
         modal.classList.remove('active');
         modalOverlay.classList.remove('active');
-        // Vide le contenu pour arrêter la vidéo
-        modalContent.innerHTML = ''; 
+        modalContent.innerHTML = '';
     }
 
-    // Ajoute un écouteur de clic sur chaque projet vidéo
     videoTriggers.forEach(trigger => {
         trigger.addEventListener('click', function() {
-            // Récupère le chemin de la vidéo depuis l'attribut 'data-video-src'
-            const videoPath = trigger.getAttribute('data-video-src');
-            if (videoPath) {
-                openModal(videoPath);
+            const embedPath = trigger.getAttribute('data-video-src');
+            if (embedPath) {
+                openModal(embedPath);
             }
         });
     });
 
-    // Ajoute les écouteurs pour fermer la modale
     closeModalBtn.addEventListener('click', closeModal);
     modalOverlay.addEventListener('click', closeModal);
 

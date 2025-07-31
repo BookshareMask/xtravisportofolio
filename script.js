@@ -4,11 +4,13 @@
    2. Année dynamique dans le Footer
    3. Filtre du Portfolio
    4. Liens de navigation actifs au défilement
-   5. NOUVEAU : Logique du formulaire de contact avec EmailJS
+   5. Logique du formulaire de contact avec EmailJS
+   6. NOUVEAU : Gestion de la modale vidéo
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    // ... (Tout le code des sections 1 à 4 reste identique) ...
     /* =================================================== */
     /* 1. MENU HAMBURGER MOBILE (inchangé)                 */
     /* =================================================== */
@@ -78,37 +80,68 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     /* ================================================================= */
-    /* 5. NOUVEAU : LOGIQUE DU FORMULAIRE DE CONTACT AVEC EMAILJS        */
+    /* 5. LOGIQUE DU FORMULAIRE DE CONTACT AVEC EMAILJS (inchangé)       */
     /* ================================================================= */
-    
-    // On initialise EmailJS avec votre Clé Publique
     (function() {
-        emailjs.init({
-          publicKey: "w01jIYDLYupLg0XXv", // <-- Remplacez par VOTRE Public Key
-        });
+        emailjs.init({ publicKey: "w01jIYDLYupLg0XXv" });
     })();
-
-    // On sélectionne le formulaire et on ajoute un écouteur d'événement
     const contactForm = document.querySelector('.contact-form');
-
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
-            // On empêche le comportement par défaut du formulaire (qui est de recharger la page)
             event.preventDefault();
-
-            // On utilise la méthode sendForm de EmailJS
             emailjs.sendForm('service_ruxg9a6', 'template_iocmjcd', this)
                 .then(function() {
-                    // Ce code s'exécute si l'email est envoyé avec succès
                     alert('Message envoyé avec succès !');
-                    // On vide les champs du formulaire
                     contactForm.reset();
                 }, function(error) {
-                    // Ce code s'exécute s'il y a une erreur
                     alert('Une erreur est survenue. Veuillez réessayer.');
                     console.error('ERREUR EMAILJS :', error);
                 });
         });
     }
+
+    /* =================================================== */
+    /* 6. NOUVEAU : GESTION DE LA MODALE VIDÉO              */
+    /* =================================================== */
+    
+    // On sélectionne les éléments de la modale
+    const modal = document.querySelector('.modal');
+    const modalOverlay = document.querySelector('.modal-overlay');
+    const modalContent = document.querySelector('.modal-content');
+    const closeModalBtn = document.querySelector('.close-modal');
+    
+    // On sélectionne TOUS les projets qui sont des vidéos
+    const videoTriggers = document.querySelectorAll('.portfolio-item.motion, .portfolio-item.video');
+
+    // Fonction pour ouvrir la modale
+    function openModal(videoSrc) {
+        // Crée une balise vidéo et l'ajoute au contenu de la modale
+        modalContent.innerHTML = `<video src="${videoSrc}" controls autoplay></video>`;
+        modal.classList.add('active');
+        modalOverlay.classList.add('active');
+    }
+
+    // Fonction pour fermer la modale
+    function closeModal() {
+        modal.classList.remove('active');
+        modalOverlay.classList.remove('active');
+        // Vide le contenu pour arrêter la vidéo
+        modalContent.innerHTML = ''; 
+    }
+
+    // Ajoute un écouteur de clic sur chaque projet vidéo
+    videoTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function() {
+            // Récupère le chemin de la vidéo depuis l'attribut 'data-video-src'
+            const videoPath = trigger.getAttribute('data-video-src');
+            if (videoPath) {
+                openModal(videoPath);
+            }
+        });
+    });
+
+    // Ajoute les écouteurs pour fermer la modale
+    closeModalBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
 
 });

@@ -498,29 +498,11 @@ section {
     color: #fff;
 }
 
-
 /* =================================================== */
 /* 10. RESPONSIVE (ADAPTATION MOBILE)                  */
 /* =================================================== */
 
-/* Tablettes (jusqu'à 992px) */
-@media (max-width: 992px) {
-    h2.section-title { font-size: 2.2rem; }
-    
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-info {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-}
+/* ... (la section pour les tablettes @media (max-width: 992px) est au-dessus) ... */
 
 /* Mobiles (jusqu'à 768px) */
 @media (max-width: 768px) {
@@ -571,7 +553,26 @@ section {
     .portfolio-gallery {
         grid-template-columns: 1fr;
     }
+
+    /* ================================== */
+    /*  NOUVEAU : Correction pour les boutons sur mobile */
+    /* ================================== */
+    .home-buttons {
+        display: flex;
+        flex-direction: column; /* On force les boutons à s'empiler verticalement */
+        align-items: center;   /* On les centre horizontalement */
+        gap: 15px;             /* On ajoute un bel espace de 15px entre les deux */
+        width: 100%;           /* Le conteneur prend toute la largeur */
+    }
+
+    .home-buttons .btn {
+        width: 80%; /* Chaque bouton prend 80% de la largeur disponible */
+        max-width: 300px; /* Mais pas plus de 300px de large */
+        margin: 0; /* On retire les marges horizontales qui n'ont plus de sens */
+        text-align: center; /* On s'assure que le texte est bien centré dans le bouton */
+    }
 }
+
 /* =================================================== */
 /* 11. FENÊTRE MODALE (LIGHTBOX) POUR VIDÉOS         */
 /* =================================================== */

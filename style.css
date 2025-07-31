@@ -572,3 +572,67 @@ section {
         grid-template-columns: 1fr;
     }
 }
+/* =================================================== */
+/* 11. FENÊTRE MODALE (LIGHTBOX) POUR VIDÉOS         */
+/* =================================================== */
+
+/* L'arrière-plan sombre qui couvre toute la page */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1010;
+    display: none; /* Caché par défaut */
+}
+
+/* La boîte principale de la modale */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1020;
+    display: none; /* Caché par défaut */
+    max-width: 900px;
+    width: 90%;
+}
+
+/* Le conteneur du contenu (la vidéo) */
+.modal-content {
+    position: relative;
+    width: 100%;
+    /* Ratio 16:9 pour la vidéo */
+    padding-top: 56.25%; 
+    background-color: #000;
+}
+
+.modal-content video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Le bouton pour fermer */
+.close-modal {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* Classes pour afficher la modale avec JavaScript */
+.modal.active,
+.modal-overlay.active {
+    display: block;
+}

@@ -571,6 +571,26 @@ section {
         margin: 0; /* On retire les marges horizontales qui n'ont plus de sens */
         text-align: center; /* On s'assure que le texte est bien centré dans le bouton */
     }
+       /* ================================== */
+    /*  NOUVEAU : Correction pour la section "À Propos" sur mobile */
+    /* ================================== */
+    .about-content {
+        flex-direction: column; /* Force les éléments à s'empiler */
+        align-items: center;    /* Centre l'image et le bloc de texte */
+        text-align: center;     /* Centre le texte à l'intérieur de son bloc */
+    }
+
+    /* ================================== */
+    /*  NOUVEAU : Correction pour la section "Contact" sur mobile */
+    /* ================================== */
+    .contact-container {
+        grid-template-columns: 1fr; /* On passe la grille à UNE seule colonne */
+    }
+    
+    .contact-info {
+        text-align: center;         /* On centre les infos de contact */
+        margin-bottom: 40px;        /* On ajoute de l'espace avant le formulaire */
+    }
 }
 
 /* =================================================== */
